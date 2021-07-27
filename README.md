@@ -11,7 +11,11 @@ Not available in PyPI.
 Start the server
 
 ```bash
+# For linux / MacOS
 export SECRET_KEY="Insert key here"
+# For windows
+# set SECRET_KEY="Insert key here"
+
 python3 manage.py runserver localhost:5000
 ```
 
