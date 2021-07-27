@@ -1,0 +1,11 @@
+# Python caches
+*__pycache__
+
+# internal testing
+test.py
+
+# Databases
+*.sqlite3
+
+# main python file
+main.py
