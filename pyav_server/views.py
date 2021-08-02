@@ -1,5 +1,5 @@
 import json
-from django.http import HttpResponse, HttpRequest, JsonResponse
+from django.http import HttpResponse, HttpRequest, JsonResponse, StreamingHttpResponse
 from pyav import iter_av_packets
 
 def produce_av_packets(r: HttpRequest):
@@ -24,7 +24,7 @@ def produce_av_packets(r: HttpRequest):
         if not isinstance(seek, int):
             return JsonResponse({'error': 'seek is not integer value'}, status=400)
     try:        
-        return HttpResponse(iter_av_packets(
+        return StreamingHttpResponse(iter_av_packets(
             url,
             format,
             codec,
